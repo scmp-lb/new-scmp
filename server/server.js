@@ -14,7 +14,9 @@ process.on("uncaughtException", (err) => {
 });
 
 /* DOTENV CONFIG */
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+ dotenv.config();
+}
 
 //cloudinary configuration
 cloudinary.config({
