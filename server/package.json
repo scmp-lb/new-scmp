@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "Mohamad Saayed , Jana Shami",
+  "author": " Software Engineer Mohamad Saayed ,Software Engineer Jana Shami",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
