@@ -1,0 +1,79 @@
+@import "../utils/mixins";
+@import "../utils//variables";
+
+.Spec-Dep {
+  position: relative;
+  .Nav-Bar {
+    background-color: black !important;
+    opacity: 0.95;
+    .Nav-list {
+      li a {
+        color: white !important;
+        font-weight: 100;
+        box-shadow: none !important ;
+      }
+    }
+  }
+  .back {
+    position: absolute;
+    top: 22%;
+    left: 16%;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    &:hover {
+      color: #ff9900;
+      transform: scale(1.1);
+    }
+  }
+  .One-Department {
+    @include flex(flex, row, center, space-around, wrap);
+    padding: 15rem 15% 6rem 15%;
+
+    .dep-text h1 {
+      color: #ff9900;
+      padding-bottom: 2rem;
+    }
+    img {
+      width: 35%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    p {
+      width: 750px;
+      text-align: justify;
+    }
+    .desc {
+      line-height: 2rem;
+    }
+  }
+}
+@include responsive(1024px) {
+  .Spec-Dep {
+    position: relative;
+    height: 200%;
+    text-align: center;
+    .back {
+      position: absolute;
+      top: 8%;
+      left: 12%;
+    }
+  }
+
+  .One-Department {
+    img {
+      width: 123% !important;
+      margin-bottom: 2rem;
+    }
+    p {
+      width: 690px !important;
+      text-align: justify;
+    }
+  }
+  Footer {
+    position: absolute;
+    text-align: justify;
+  }
+}

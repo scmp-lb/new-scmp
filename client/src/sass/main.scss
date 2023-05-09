@@ -1,0 +1,60 @@
+@import "./utils//variables";
+@import "components/nav";
+@import "pages/home";
+@import "pages/departments";
+@import "pages/events";
+@import "pages/contact";
+@import "pages/onedepartment";
+@import "components/footer";
+@import "components/department";
+@import "components/event";
+@import "pages/oneevent";
+@import "components/upcomingEvents";
+@import "components/dashSideBar";
+@import "pages/startupWeekend";
+@import "pages/login";
+@import "components/NavBar";
+@import "pages/Dash";
+@import "components/navDropDown";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.App {
+  background-color: #ededed;
+  font-family: $font-family-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff9900;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff6600;
+}
+.nav-mobile {
+  display: none;
+}
+
+@include responsive(1024px) {
+  .nav-mobile {
+    display: block;
+  }
+  .nav-desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,137 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.Nav-Bar {
+  h5 {
+    color: #ff9900;
+  }
+  @include flex(flex, row, center, space-between);
+  width: 100%;
+  position: fixed;
+  margin: auto;
+  right: 0;
+  font-size: $base-font-size;
+  z-index: 1;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 15%;
+  z-index: 9999;
+  backdrop-filter: blur(60px);
+  p {
+    color: #ff9900;
+    font-size: 10px;
+  }
+
+  .Nav-list {
+    @include flex();
+    gap: 3.5rem;
+    opacity: 0.9;
+    font-weight: bold;
+    li Link {
+      display: block;
+      text-decoration: none;
+      padding: 20px 20px;
+      font-weight: 700;
+      transition: 0.4s all;
+    }
+    li.navbar-dropdown {
+      position: relative;
+      display: flex;
+    }
+    li.navbar-dropdown:hover .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    li.navbar-dropdown .dropdown {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      padding: 20px 10px;
+      top: 100%;
+      transform: translateY(50px);
+      left: 0;
+      display: flex;
+
+      flex-direction: column-reverse;
+      overflow-y: scroll;
+      background-color: black;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      z-index: 111;
+      transition: 0.4s all;
+    }
+    li.navbar-dropdown .dropdown Link {
+      color: white;
+    }
+
+    .navbar-dropdown .dropdown .drop {
+      color: white;
+    }
+  }
+
+  img {
+    height: 3.3rem;
+    object-fit: cover;
+  }
+  li {
+    width: fit-content;
+    list-style: none;
+  }
+  li a {
+    color: $primary-color;
+  }
+  .Nav-list li a {
+    text-decoration: none;
+    &:hover {
+      border-bottom: #ff9900 3px solid;
+    }
+  }
+}
+.menu-icon {
+  display: none; /* Hide the burger menu icon by default */
+}
+
+.menu-icon__line {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+@include responsive(1024) {
+  /* Change the burger menu icon appearance when the menu is open */
+  .menu-icon.open .menu-icon__line:nth-of-type(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-icon.open .menu-icon__line:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.open .menu-icon__line:nth-of-type(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Show the navigation menu when the burger menu icon is clicked */
+  .menu-icon.open + .Nav-list {
+    display: block;
+  }
+  .Nav-Bar {
+    .menu-icon {
+      display: block; /* Show the burger menu icon on small screens */
+      cursor: pointer;
+    }
+    .Nav-list {
+      display: none; /* Hide the navigation menu by default on small screens */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+    }
+    .Nav-list li {
+      display: block;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+}

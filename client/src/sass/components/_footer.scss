@@ -1,0 +1,88 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.footer {
+  margin-top: 3rem;
+  background-color: black;
+  color: white;
+
+  .footer-top {
+    padding: 3rem 15%;
+    @include flex(flex, row, center, space-between);
+    .info {
+      line-height: 2;
+    }
+  }
+  .footer-bottom {
+    padding: 10px 15%;
+    text-align: center;
+    border-top: 2px white solid;
+  }
+  .links a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      border-bottom: #ff9900 2px solid;
+    }
+  }
+
+  .social {
+    width: 162.92px;
+    padding-left: calc(162.92px - 15.99px);
+  }
+  .social p a {
+    color: white;
+
+    &:hover {
+      color: #ff9900;
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .footer {
+    height: 50vh;
+    position: relative;
+    .footer-top {
+      display: block;
+      .info {
+        position: absolute;
+
+        @include flex(flex, row, center, space-between);
+        top: 75%;
+        right: 15%;
+        left: 15%;
+      }
+      .info p,
+      .social p {
+        font-size: 22px !important;
+      }
+      .links {
+        font-size: $forth-font-size;
+        line-height: 10rem;
+        text-align: center;
+      }
+      .links p {
+        font-size: 30px;
+      }
+      .social {
+        width: 60%;
+        padding-left: 0;
+        position: absolute;
+        font-size: 30px;
+        @include flex(flex, row, center, space-between);
+        top: 85%;
+        right: 20%;
+        font-size: $forth-font-size;
+        left: 20%;
+      }
+    }
+
+    .footer-bottom {
+      text-align: center;
+      position: absolute;
+      width: 100vw;
+      top: 95%;
+      border-top: 2px white solid;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../utils/mixins";
+@import "../utils//variables";
+
+
+.login-form{
+    text-align: center;
+    padding-top: 18%;
+    p{
+        font-size: $tirnary-font-size;
+        padding: 1rem 0;
+        
+    }
+    .form-group{
+        input{
+            padding: 7px 5px;
+        margin:0.5rem 0;
+    width:22rem}
+    button{
+        background-color:  #ff9900;
+        padding: 0.7rem 1.7rem;
+        margin-top: 1.7rem;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        &:hover{
+            background-color:#0f0f0f;
+            transform: scale(1.1);
+        }
+    }
+    }
+}

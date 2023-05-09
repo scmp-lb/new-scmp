@@ -1,0 +1,52 @@
+DATABASE:
+    1- Departments
+    2- Events
+    3- Projects
+    4- SWS
+    5- Admin
+
+---------------------------------------------------------------------------------------
+
+USERS:
+    1- ADMIN
+    2- GUESTS
+
+---------------------------------------------------------------------------------------
+
+FEATURES:
+    -> GUESTS:
+        1- Preview
+        2- Send Emails
+
+    -> ADMIN:
+        1- Departments: create - read - update - delete
+        2- Events: create - read - update - delete
+        3- Project: create - read - update - delete - set Winner Project
+        4- SWS: create - read  - update - delete
+
+---------------------------------------------------------------------------------------
+
+ROUTES:
+    1- Departments: 
+        GET - POST : /api/v1/departments
+        GET - DELETE - UPDATE: /api/v1/departments/:id
+
+    2- Events:
+        GET - POST : /api/v1/events
+        GET - DELETE - UPDATE: /api/v1/events/:id
+
+    3- Events:
+        GET - POST : /api/v1/events
+        GET - DELETE - UPDATE: /api/v1/events/:id
+
+    4- Projects:
+        GET - POST : /api/v1/projects
+        GET - DELETE - UPDATE: /api/v1/projects/:id
+        GET - POST (set winner, preview winner details): /api/v1/projects/winner
+
+    5- SWS:
+        GET - POST : /api/v1/sws
+        GET - DELETE - UPDATE: /api/v1/sws/:id
+
+---------------------------------------------------------------------------------------
+
