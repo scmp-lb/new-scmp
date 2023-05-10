@@ -9,6 +9,7 @@ import xss from "xss-clean";
 import cors from "cors";
 import fileUpload from "express-fileupload";
 import dotenv from "dotenv";
+import path from "path";
 
 /* IMPORTs FROM MIDDLEWARE */
 import errorMiddleware from "./middlewares/error.js";
@@ -17,12 +18,14 @@ import errorMiddleware from "./middlewares/error.js";
 const app = express();
 
 /* DOTENV CONFIG */
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+ dotenv.config();
+}
 
 /* CONFIGURATING THE APP */
 app.use(helmet());
 if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
+ app.use(morgan("dev"));
 }
 app.use(express.json());
 app.use(bodyParser.json());
@@ -47,6 +50,15 @@ app.use("/api/v1/department", departmentRouter);
 app.use("/api/v1/event", eventRouter);
 app.use("/api/v1/sws", swsRouter);
 app.use("/api/v1/project", projectRouter);
+
+// allow app to use build file
+if (process.env.NODE_ENV === "production") {
+ app.use(express.static(path.join, "../client/build"));
+
+ app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+ });
+}
 
 //using error middleware in the app
 app.use(errorMiddleware);
