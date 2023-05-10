@@ -13,7 +13,7 @@
   "author": " Software Engineer Mohamad Saayed ,Software Engineer Jana Shami",
   "license": "ISC",
   "optionalDependencies": {
-    "fsevents":"2.3.2"
+    "fsevents":"*"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
