@@ -5,9 +5,16 @@ import { Provider } from "react-redux";
 import store from "./app/store"; // Import your Redux store
 import App from "./App";
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById("root")
+// );
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
