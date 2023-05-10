@@ -19,13 +19,13 @@ const app = express();
 
 /* DOTENV CONFIG */
 if (process.env.NODE_ENV !== "production") {
- dotenv.config();
+  dotenv.config();
 }
 
 /* CONFIGURATING THE APP */
 app.use(helmet());
 if (process.env.NODE_ENV === "development") {
- app.use(morgan("dev"));
+  app.use(morgan("dev"));
 }
 app.use(express.json());
 app.use(bodyParser.json());
@@ -53,11 +53,11 @@ app.use("/api/v1/project", projectRouter);
 
 // allow app to use build file
 if (process.env.NODE_ENV === "production") {
- app.use(express.static(path.join, "../client/build"));
+  app.use(express.static(path.join, "../client/build"));
 
- app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
- });
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+  });
 }
 
 //using error middleware in the app

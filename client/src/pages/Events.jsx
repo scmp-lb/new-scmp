@@ -21,7 +21,7 @@ function Event() {
   return (
     <div className="Events">
       {/* <img className="hero" src={Hero} alt=" Hero Image"></img> */}
-      <h1>EVENTS</h1>
+      <h1 className="test">EVENTS</h1>
       <div className="event-cards">
         {Object.keys(events).length > 0
           ? events?.event?.map((ele, index) => {
