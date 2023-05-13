@@ -27,7 +27,6 @@ server/build/
 
 # Compiled files
 *.css
-*.js
 *.map
 
 # Cache and temporary files

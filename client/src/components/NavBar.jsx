@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { getAllSwSEvents } from "../features/SWS/swsSlice";
 import logo from "../assets/images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
+
 function NavBar({ style }) {
   const dispatch = useDispatch();
   const { sws } = useSelector((state) => state.sws);
@@ -25,22 +26,20 @@ function NavBar({ style }) {
         <a href="/">Home</a>
         <a href="/Departments">Departments</a>
         <a href="/Events">Events</a>
-        <a className="navbar-dropdown">
+        <p className="navbar-dropdown">
           <label htmlFor="sws">Start-up Weekend</label>
 
           <select id="sws">
             <option> </option>
-            {sws.length > 0
+            {sws?.length > 0
               ? sws.map((ele, index) => {
                   return (
-                    <option>
-                      <NavDropDown value={ele} key={index} />
-                    </option>
+                      <NavDropDown value={ele} key={index}/>
                   );
                 })
               : ""}
           </select>
-        </a>
+        </p>
 
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />

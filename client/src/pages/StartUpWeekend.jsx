@@ -74,8 +74,8 @@ function StartUpWeekend() {
           <Slider className="slider" {...settings}>
             {oneSWS?.sws?.images?.length > 0 &&
               oneSWS?.sws?.images?.map((image) => (
-                <div className="image">
-                  <img src={image?.url} key={image} alt="Carousel image" />
+                <div  key={image?.public_id} className="image">
+                  <img src={image?.url} alt="Carousel image" />
                 </div>
               ))}
           </Slider>

@@ -1,10 +1,9 @@
-import axios from "axios";
+import axiosConf from "../../axiosConf";
 
 // Get sws event by id
 const getSwsEventById = async (id) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/v1/sws/${id}`);
-    console.log("succeeded", response.data);
+    const response = await axiosConf.get(`/sws/${id}`);
     return response.data;
   } catch (err) {
     console.error(err);

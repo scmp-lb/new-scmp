@@ -38,7 +38,7 @@ function Nav({ style }) {
     <li className="navbar-dropdown">
      <Link to="#">Start-up Weekend</Link>
      <div className="dropdown">
-      {sws.length > 0
+      {sws?.length > 0
        ? sws.map((ele, index) => {
           return <NavDropDown value={ele} key={index} />;
          })

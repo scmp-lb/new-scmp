@@ -1,8 +1,8 @@
-import axios from "axios";
+import axiosConf from "../../axiosConf";
 
 //Get a specific event by it's id
 const getEventById = async (id) => {
-  const response = await axios.get(`http://localhost:5000/api/v1/event/${id}`);
+  const response = await axiosConf.get(`/event/${id}`);
   return response.data;
 };
 

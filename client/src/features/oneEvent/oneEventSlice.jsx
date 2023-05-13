@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import oneEventService from "./oneEventService";
+
 const initialState = {
   event: [],
   isError: false,
@@ -13,7 +14,6 @@ export const getEventById = createAsyncThunk(
   "events/getEvent",
   async (id, thunkAPI) => {
     try {
-      console.log(oneEventService.getEventById(id));
       return await oneEventService.getEventById(id);
     } catch (error) {
       const message =
@@ -26,6 +26,7 @@ export const getEventById = createAsyncThunk(
     }
   }
 );
+
 export const oneEventSlice = createSlice({
   name: "oneEvent",
   initialState,

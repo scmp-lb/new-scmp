@@ -25,7 +25,6 @@ function OneDepartment() {
 
   useEffect(() => {
     dispatch(getDepartmentById(params.id));
-    console.log(department);
   }, [params.id]);
 
   return (

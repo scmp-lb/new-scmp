@@ -36,8 +36,6 @@ function OneEvent() {
     AOS.init();
     AOS.refresh();
     dispatch(getEventById(params.id));
-    console.log(params.id);
-    console.log(event);
   }, [params.id]);
 
   return (

@@ -13,7 +13,6 @@ export const getDepartments = createAsyncThunk(
   "departments/getAll",
   async (_, thunkAPI) => {
     try {
-      console.log(departmentService.getDepartments());
       return await departmentService.getDepartments();
     } catch (error) {
       const message =
@@ -50,7 +49,6 @@ export const editDepartment = createAsyncThunk(
   "department/edit",
   async ({ id, departmentData }, thunkAPI) => {
     try {
-      console.log("blaa", departmentService.editDepartment(id, departmentData));
       return await departmentService.editDepartment(id, departmentData);
     } catch (error) {
       const message =

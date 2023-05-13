@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "SET node backend/server.js",
-    "dev": "SET NODE_ENV=development& nodemon backend/server",
-    "prod": "SET NODE_ENV=production& nodemon backend/server"
+    "start": "node server.js",
+    "dev": "SET NODE_ENV=development& nodemon server",
+    "prod": "SET NODE_ENV=production& nodemon server"
   },
   "author": " Software Engineer Mohamad Saayed ,Software Engineer Jana Shami",
   "license": "ISC",

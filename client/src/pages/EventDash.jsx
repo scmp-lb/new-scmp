@@ -164,7 +164,6 @@ function EventsDash() {
           files.forEach((file) => {
            const reader = new FileReader();
            reader.onload = () => {
-            console.log(reader.result);
             if (reader.readyState === 2) {
              setImages((oldArray) => [...oldArray, reader.result]);
             }

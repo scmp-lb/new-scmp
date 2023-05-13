@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Link, useNavigate } from "react-router-dom";
 function NavDropDown({ value }) {
-  useEffect(() => {
-    console.log(value._id, "ajannaa");
-  }, []);
+  const navigate = useNavigate();
+
+  useEffect(()=>{},[navigate])
 
   return (
-    <div style={{ display: "block" }}>
-      <Link className="drop" to={`/StartUpWeekend/${value._id}`}>
-        {value.title}
-      </Link>
-    </div>
+    <option style={{ display: "block", color:"white" }} onClick={()=>navigate(`/StartUpWeekend/${value._id}`)}>
+      {value.title}
+    </option>
   );
 }
 
