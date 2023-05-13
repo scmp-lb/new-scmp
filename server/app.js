@@ -9,10 +9,14 @@ import xss from "xss-clean";
 import cors from "cors";
 import fileUpload from "express-fileupload";
 import dotenv from "dotenv";
-import path from "path";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
 /* IMPORTs FROM MIDDLEWARE */
 import errorMiddleware from "./middlewares/error.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /* CREATING THE EXPRESS APP */
 const app = express();
@@ -53,7 +57,7 @@ app.use("/api/v1/project", projectRouter);
 
 // allow app to use build file
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join, "../client/build"));
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../client/build/index.html"));

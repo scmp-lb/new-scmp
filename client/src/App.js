@@ -14,73 +14,68 @@ import SWSDash from "./pages/swsDash";
 import Nav from "./components/Nav";
 import { ProtectedRoute } from "./components/protectedRoute";
 import NavBar from "./components/NavBar";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 function App() {
- const currentLocation = window.location.pathname;
- const isAdminRoute =
-  currentLocation === "/DepartmentDash" ||
-  currentLocation === "/EventsDash" ||
-  currentLocation === "/SWSDash" ||
-  currentLocation === "/login";
- const blackNav =
-  currentLocation === "/OneEvent/:id" ||
-  currentLocation === "/OneDepartment/:id";
+  const currentLocation = window.location.pathname;
+  const isAdminRoute =
+    currentLocation === "/DepartmentDash" ||
+    currentLocation === "/EventsDash" ||
+    currentLocation === "/SWSDash" ||
+    currentLocation === "/login";
 
- return (
-  <Router>
-   <div className="App">
-    {!isAdminRoute && (
-     <>
-      <div className="nav-desktop">
-       <Nav />
+  return (
+    <Router>
+      <div className="App">
+        {!isAdminRoute && (
+          <>
+            <div className="nav-desktop">
+              <Nav />
+            </div>
+
+            <div className="nav-mobile">
+              <NavBar />
+            </div>
+          </>
+        )}
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Departments" element={<Departments />} />
+          <Route path="/Events" element={<Events />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/OneDepartment/:id" element={<OneDepartment />} />
+          <Route path="/OneEvent/:id" element={<OneEvent />} />
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/StartUpWeekend/:id" element={<StartUpWeekend />} />{" "}
+          <Route
+            path="/EventsDash"
+            element={
+              <ProtectedRoute>
+                <EventDash />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/SWSDash"
+            element={
+              <ProtectedRoute>
+                <SWSDash />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/DepartmentDash"
+            element={
+              <ProtectedRoute>
+                <DepartmentDash />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+        {!isAdminRoute && <Footer />}
       </div>
-
-      <div className="nav-mobile">
-       <NavBar />
-      </div>
-     </>
-    )}
-
-    <Routes>
-     <Route path="/" element={<Home />} />
-     <Route path="/Departments" element={<Departments />} />
-     <Route path="/Events" element={<Events />} />
-     <Route path="/ContactUs" element={<ContactUs />} />
-     <Route path="/OneDepartment/:id" element={<OneDepartment />} />
-     <Route path="/OneEvent/:id" element={<OneEvent />} />
-     <Route path="/login" element={<Login />}></Route>
-     <Route path="/StartUpWeekend/:id" element={<StartUpWeekend />} />{" "}
-     <Route
-      path="/EventsDash"
-      element={
-       <ProtectedRoute>
-        <EventDash />
-       </ProtectedRoute>
-      }
-     />
-     <Route
-      path="/SWSDash"
-      element={
-       <ProtectedRoute>
-        <SWSDash />
-       </ProtectedRoute>
-      }
-     />
-     <Route
-      path="/DepartmentDash"
-      element={
-       <ProtectedRoute>
-        <DepartmentDash />
-       </ProtectedRoute>
-      }
-     />
-    </Routes>
-    {!isAdminRoute && <Footer />}
-   </div>
-  </Router>
- );
+    </Router>
+  );
 }
 
 export default App;

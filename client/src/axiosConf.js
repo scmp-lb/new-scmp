@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const axiosConf = axios.create({
-  baseURL: 'http://127.0.0.1:5000/api/v1',
+  baseURL: process.env.REACT_APP_API_URL,
   timeout: 5000,
   headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'multipart/form-data',
-  }
+    "Content-Type": "application/json",
+    Accept: "multipart/form-data",
+  },
 });
 
 export default axiosConf;
