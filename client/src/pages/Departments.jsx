@@ -26,7 +26,9 @@ function Departments() {
           {departments?.department?.length > 0
             ? departments?.department?.map((ele) => {
                 return (
-                  <Department src={ele?.image?.url} value={ele} key={ele?.id} />
+                  <div key={ele._id}>
+                  <Department src={ele?.image?.url} value={ele} />
+                  </div>
                 );
               })
             : ""}

@@ -1,5 +1,4 @@
 import authReducer from "../features/auth/authSlice";
-import { getDefaultMiddleware } from "@reduxjs/toolkit";
 import departmentReducer from "../features/departments/departmentSlice";
 import eventReducer from "../features/events/eventSlice";
 import oneDepartmentReducer from "../features/oneDepartment/oneDepartmentSlice";
@@ -18,9 +17,6 @@ export const store = configureStore({
     event: oneEventReducer,
     department: oneDepartmentReducer,
   },
-});
-const customizedMiddleware = getDefaultMiddleware({
-  serializableCheck: false,
 });
 
 export default store;

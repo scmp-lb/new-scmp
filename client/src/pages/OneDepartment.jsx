@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Footer from "../components/footer";
 import { BiArrowBack } from "react-icons/bi";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";

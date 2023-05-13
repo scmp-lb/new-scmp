@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../components/footer";
 import { BiArrowBack } from "react-icons/bi";
 import { useParams, useLocation } from "react-router-dom";
 import { getEventById } from "../features/oneEvent/oneEventSlice";

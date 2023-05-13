@@ -7,7 +7,7 @@ function NavDropDown({ value }) {
   useEffect(()=>{},[navigate])
 
   return (
-    <option style={{ display: "block", color:"white" }} onClick={()=>navigate(`/StartUpWeekend/${value._id}`)}>
+    <option style={{ display: "block", color:"white",cursor:"pointer",paddingBottom:"3px" }} onClick={()=>navigate(`/StartUpWeekend/${value._id}`)}>
       {value.title}
     </option>
   );

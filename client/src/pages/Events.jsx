@@ -26,12 +26,14 @@ function Event() {
         {Object.keys(events).length > 0
           ? events?.event?.map((ele, index) => {
               return (
+                <div key={ele._id}>
                 <OneEvent
                   className="oneEvent"
                   src={ele?.images[0]?.url}
                   value={ele}
-                  key={ele?.id}
+                  key={ele._id}
                 />
+                </div>
               );
             })
           : ""}
