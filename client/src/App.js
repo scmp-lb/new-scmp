@@ -14,6 +14,7 @@ import SWSDash from "./pages/swsDash";
 import Nav from "./components/Nav";
 import { ProtectedRoute } from "./components/protectedRoute";
 import NavBar from "./components/NavBar";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const currentLocation = window.location.pathname;
@@ -71,6 +72,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+          {/* unregistred route => auto-return to latest registred route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {!isAdminRoute && <Footer />}
       </div>
