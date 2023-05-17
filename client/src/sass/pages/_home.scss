@@ -3,8 +3,6 @@
 
 .Home-page {
  position: relative;
- // height: 500px;
-
  h2 {
   opacity: 0.8;
  }
@@ -18,8 +16,7 @@
  }
  .hero {
   width: 100%;
-  height: calc(100vh-90px);
-
+  height: 100vh;
   object-fit: cover;
  }
 
@@ -161,6 +158,12 @@
   .hero-text {
    bottom: 30%;
   }
+  .upcoming-events {
+   font-size: $secondary-font-size;
+   a {
+    font-size: $tirnary-font-size;
+   }
+  }
  }
 
  .about-us {
@@ -171,15 +174,13 @@
     height: 400px !important;
    }
    .About-us-text {
-    // margin: 2rem 2rem;
-
     h3 {
-     margin-top: 2rem;
+     margin-top: 3rem;
      width: 700px;
      text-align: center;
     }
     p {
-     font-size: $forth-font-size;
+     font-size: $secondary-font-size;
      margin-top: 3rem;
      text-align: justify;
     }
@@ -190,6 +191,7 @@
   .card-container {
    margin-top: 6rem;
    .card {
+    font-size: $tirnary-font-size;
     margin-top: 1rem !important;
    }
   }
