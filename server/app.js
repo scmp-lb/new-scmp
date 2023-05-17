@@ -1,6 +1,5 @@
 import express from "express";
 import morgan from "morgan";
-import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import mongoSanitize from "express-mongo-sanitize";
@@ -27,7 +26,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 /* CONFIGURATING THE APP */
-app.use(helmet());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
