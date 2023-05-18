@@ -31,8 +31,9 @@
 
 @media only screen and (max-width: 1024px) {
  .Events {
-  .hero {
-   height: 60vh;
+  .event-cards {
+   padding-top: 0rem;
+   @include flex(flex, column, _, _, _);
   }
 
   h1 {
@@ -41,13 +42,10 @@
   .oneEvent {
    .event-card {
     height: 720px;
+    width: 100%;
     p {
      font-size: $tirnary-font-size;
     }
-   }
-   .event-cards {
-    padding-top: 0rem;
-    @include flex(flex, row, center, space-around, wrap);
    }
   }
  }
