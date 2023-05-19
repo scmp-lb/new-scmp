@@ -29,7 +29,10 @@ function NavBar({ style }) {
     <a href="/Departments">Departments</a>
     <a href="/Events">Events</a>
     <div className="navbar-dropdown">
-     <h1 style={{ fontSize: "44px" }} onClick={() => setIsOpen(!isOpen)}>
+     <h1
+      style={{ fontSize: "44px", paddingTop: "3rem", paddingBottom: "3rem" }}
+      onClick={() => setIsOpen(!isOpen)}
+     >
       Start-up Weekend
      </h1>
      {isOpen && (

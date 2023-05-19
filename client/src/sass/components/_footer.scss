@@ -41,15 +41,16 @@
 @media only screen and (max-width: 1024px) {
  .footer {
   position: relative;
+  height: 42vh;
   margin-top: 0;
 
   .footer-top {
    @include flex(flex, column, baseline, baseline);
-   padding: 2rem;
+   padding: 5rem;
 
    .info {
     @include flex(flex, row, baseline, space-between);
-    padding: 1rem 0 3rem 0;
+    padding: 3rem 0 11rem 0;
     gap: 0.3rem;
     width: 100%;
 
@@ -74,7 +75,7 @@
    .social {
     @include flex(flex, row, baseline, space-between);
     width: 100%;
-    padding: 1rem 0 3rem 0;
+    padding: 7rem 0 3rem 0;
     p {
      padding: 0;
      font-size: 2.5rem;
