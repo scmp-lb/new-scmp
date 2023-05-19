@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import NavDropDown from "./navDropDown";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -9,15 +9,17 @@ import { useDispatch, useSelector } from "react-redux";
 function NavBar({ style }) {
  const dispatch = useDispatch();
  const { sws } = useSelector((state) => state.sws);
-
+ const [isOpen, setIsOpen] = useState(false);
  useEffect(() => {
   dispatch(getAllSwSEvents());
  }, []);
 
  const navRef = useRef();
+
  const showNavbar = () => {
   navRef.current.classList.toggle("responsive_nav");
  };
+
  return (
   <header style={{ ...style, height: "120px" }}>
    <img className="logo" src={logo} alt="logo"></img>
@@ -26,18 +28,27 @@ function NavBar({ style }) {
     <a href="/">Home</a>
     <a href="/Departments">Departments</a>
     <a href="/Events">Events</a>
-    <p className="navbar-dropdown">
-     <label htmlFor="sws">Start-up Weekend</label>
-
-     <select id="sws">
-      <option> </option>
-      {sws?.length > 0
-       ? sws.map((ele, index) => {
-          return <NavDropDown value={ele} key={index} />;
-         })
-       : ""}
-     </select>
-    </p>
+    <div className="navbar-dropdown">
+     <h1 style={{ fontSize: "44px" }} onClick={() => setIsOpen(!isOpen)}>
+      Start-up Weekend
+     </h1>
+     {isOpen && (
+      <div id="sws">
+       {sws?.length > 0
+        ? sws.map((ele, index) => {
+           return (
+            <NavDropDown
+             value={ele}
+             key={index}
+             closeMenu={showNavbar}
+             setIsOpen={() => setIsOpen(false)}
+            />
+           );
+          })
+        : ""}
+      </div>
+     )}
+    </div>
 
     <button className="nav-btn nav-close-btn" onClick={showNavbar}>
      <FaTimes />

@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "SCMP Portfolio Website",
+  "description": "Scientific Center For Manufacturing And Production",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -12,7 +12,6 @@
   },
   "author": " Software Engineer Mohamad Saayed ,Software Engineer Jana Shami",
   "license": "ISC",
-  
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",

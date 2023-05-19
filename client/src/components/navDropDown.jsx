@@ -1,16 +1,23 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function NavDropDown({ value }) {
-  const navigate = useNavigate();
+function NavDropDown({ value, closeMenu, setIsOpen }) {
+ const navigate = useNavigate();
 
-  useEffect(()=>{},[navigate])
+ useEffect(() => {}, [navigate]);
 
-  return (
-    <option style={{ display: "block", color:"white",cursor:"pointer",paddingBottom:"3px" }} onClick={()=>navigate(`/StartUpWeekend/${value._id}`)}>
-      {value.title}
-    </option>
-  );
+ return (
+  <p
+   style={{ paddingTop: "10px", paddingBottom: 0 }}
+   onClick={() => {
+    navigate(`/StartUpWeekend/${value._id}`);
+    closeMenu();
+    setIsOpen();
+   }}
+  >
+   {value.title}
+  </p>
+ );
 }
 
 export default NavDropDown;

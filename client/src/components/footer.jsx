@@ -14,6 +14,23 @@ function Footer() {
  return (
   <div className="footer">
    <div className="footer-top">
+    <div className="info">
+     {" "}
+     <p>
+      <MdEmail />
+      &nbsp;&nbsp;info@scmp-lb.com
+     </p>
+     <p>
+      {" "}
+      <FaPhone />
+      &nbsp;&nbsp; +961 1 822041
+     </p>
+     <p>
+      {" "}
+      <FaMapMarkerAlt />
+      &nbsp;&nbsp;Beirut, Bir Hassan
+     </p>
+    </div>
     <div className="links">
      <p>
       {" "}
@@ -63,23 +80,6 @@ function Footer() {
        {" "}
        <FaYoutube />
       </a>
-     </p>
-    </div>
-    <div className="info">
-     {" "}
-     <p style={{ fontSize: "25px" }}>
-      <MdEmail size={30} />
-      &nbsp;&nbsp;info@scmp-lb.com
-     </p>
-     <p style={{ fontSize: "25px" }}>
-      {" "}
-      <FaPhone size={30} />
-      &nbsp;&nbsp; +961 1 822041
-     </p>
-     <p style={{ fontSize: "25px" }}>
-      {" "}
-      <FaMapMarkerAlt size={30} />
-      &nbsp;&nbsp;Beirut, Bir Hassan
      </p>
     </div>
    </div>
