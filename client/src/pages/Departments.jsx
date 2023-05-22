@@ -5,37 +5,35 @@ import { getDepartments } from "../features/departments/departmentSlice";
 import { useLocation } from "react-router-dom";
 
 function Departments() {
-  const dispatch = useDispatch();
-  const { departments, isLoading } = useSelector((state) => state.departments);
+ const dispatch = useDispatch();
+ const { departments, isLoading } = useSelector((state) => state.departments);
 
-  const { pathname } = useLocation();
+ const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+ useEffect(() => {
+  window.scrollTo(0, 0);
+ }, [pathname, isLoading]);
 
-  useEffect(() => {
-    dispatch(getDepartments());
-  }, []);
+ useEffect(() => {
+  dispatch(getDepartments());
+ }, []);
 
-  return (
-    <>
-      <div className="Departments">
-        <h1>DEPARTMENTS</h1>
-        <div className="department-cards">
-          {departments?.department?.length > 0
-            ? departments?.department?.map((ele) => {
-                return (
-                  <div key={ele._id}>
-                  <Department src={ele?.image?.url} value={ele} />
-                  </div>
-                );
-              })
-            : ""}
-        </div>
-      </div>
-    </>
-  );
+ return (
+  <div className="Departments">
+   <h1>Department</h1>
+   <div className="department-cards">
+    {departments?.department?.length > 0
+     ? departments?.department?.map((ele) => {
+        return (
+         <div key={ele._id}>
+          <Department src={ele?.image?.url} value={ele} />
+         </div>
+        );
+       })
+     : ""}
+   </div>
+  </div>
+ );
 }
 
 export default Departments;
