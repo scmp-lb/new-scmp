@@ -40,11 +40,6 @@ function SWSCard({ value }) {
   autoplaySpeed: 2500,
  };
 
- /* GET EVENTS ON EVERY DISPATCH */
- useEffect(() => {
-  dispatch(getAllSwSEvents());
- }, [dispatch]);
-
  /* ONSUBMIT EDIT FUNCTION */
  /* SETTING ALL VALUES IN THE FORMDATA OBJECT */
  const onSubmit = (e) => {

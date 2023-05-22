@@ -43,12 +43,10 @@ function OneEvent({ value, src, className }) {
   autoplaySpeed: 2500,
  };
 
- /* GET EVENTS ON EVERY DISPATCH */
  useEffect(() => {
   AOS.init();
   AOS.refresh();
-  dispatch(getEvents());
- }, [dispatch]);
+ }, []);
 
  /* NAVIGATE FUNCTION BASED ON THE ID */
  const handleClick = () => {

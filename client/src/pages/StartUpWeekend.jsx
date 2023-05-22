@@ -13,95 +13,104 @@ import image1 from "../assets/images/5.webp";
 import image2 from "../assets/images/6.webp";
 import image3 from "../assets/images/8.webp";
 import { useLocation } from "react-router-dom";
+import Loader from "../components/loader";
 
 const Images = [image1, image2, image3];
 function StartUpWeekend() {
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-  };
-  const { oneSWS } = useSelector((state) => state.oneSWS);
-  const params = useParams();
-  const dispatch = useDispatch();
+ const settings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+ };
+ const { oneSWS, isLoading } = useSelector((state) => state.oneSWS);
+ const params = useParams();
+ const dispatch = useDispatch();
 
-  const { pathname } = useLocation();
+ const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+ useEffect(() => {
+  window.scrollTo(0, 0);
+ }, [pathname]);
 
-  useLayoutEffect(() => {
-    dispatch(getSwsEventById(params.id));
-  }, [params.id]);
+ useLayoutEffect(() => {
+  dispatch(getSwsEventById(params.id));
+ }, [params.id]);
 
-  return (
-    <div className="start-Up">
-      <h1>{oneSWS?.sws?.title}</h1>
-
-      <div className="container">
-        <h2 style={{ whiteSpace: "pre-line" }} className="tit">
-          {oneSWS?.sws?.title}
-        </h2>
-
-        <p style={{ whiteSpace: "pre-line" }} className="par">
-          {oneSWS?.sws?.subTitle}
-        </p>
-
-        <p style={{ whiteSpace: "pre-line" }} className="par">
-          {oneSWS?.sws?.Description}
-        </p>
-        {oneSWS?.sws?.linkDesc && (
-          <p>
-            {oneSWS.sws.linkDesc}{" "}
-            <span>
-              {" "}
-              {oneSWS?.sws?.link && (
-                <a target="_blank" href={oneSWS.sws.link}>
-                  &nbsp; Link
-                </a>
-              )}
-            </span>
-          </p>
-        )}
-
-        <div>
-          <Slider className="slider" {...settings}>
-            {oneSWS?.sws?.images?.length > 0 &&
-              oneSWS?.sws?.images?.map((image) => (
-                <div  key={image?.public_id} className="image">
-                  <img src={image?.url} alt="Carousel image" />
-                </div>
-              ))}
-          </Slider>
-        </div>
-        {oneSWS?.sws?.winnerProjectTitle && (
-          <div>
-            <h2 className="tit">
-              Winner Project:&nbsp;&nbsp;
-              <p>{oneSWS?.sws?.winnerProjectTitle}</p>
-            </h2>
-            <p style={{ whiteSpace: "pre-line" }} className="par">
-              {" "}
-              {oneSWS?.sws?.winnerProjectDesc}
-            </p>
-          </div>
-        )}
-        {oneSWS?.sws?.Projects && (
-          <div>
-            <h2 className="tit">ALL PROJECTS</h2>
-            <p style={{ whiteSpace: "pre-line" }} className="Projects">
-              {oneSWS?.sws?.Projects}
-            </p>
-          </div>
-        )}
-
-        <img className="sponsored" src={image4} alt=" Hero Image"></img>
-      </div>
+ return (
+  <>
+   {isLoading ? (
+    <div>
+     <Loader />
     </div>
-  );
+   ) : (
+    <div className="start-Up">
+     <h1>{oneSWS?.sws?.title}</h1>
+
+     <div className="container">
+      <h2 style={{ whiteSpace: "pre-line" }} className="tit">
+       {oneSWS?.sws?.title}
+      </h2>
+
+      <p style={{ whiteSpace: "pre-line" }} className="par">
+       {oneSWS?.sws?.subTitle}
+      </p>
+
+      <p style={{ whiteSpace: "pre-line" }} className="par">
+       {oneSWS?.sws?.Description}
+      </p>
+      {oneSWS?.sws?.linkDesc && (
+       <p>
+        {oneSWS.sws.linkDesc}{" "}
+        <span>
+         {" "}
+         {oneSWS?.sws?.link && (
+          <a target="_blank" href={oneSWS.sws.link}>
+           &nbsp; Link
+          </a>
+         )}
+        </span>
+       </p>
+      )}
+
+      <div>
+       <Slider className="slider" {...settings}>
+        {oneSWS?.sws?.images?.length > 0 &&
+         oneSWS?.sws?.images?.map((image) => (
+          <div key={image?.public_id} className="image">
+           <img src={image?.url} alt="Carousel image" />
+          </div>
+         ))}
+       </Slider>
+      </div>
+      {oneSWS?.sws?.winnerProjectTitle && (
+       <div>
+        <h2 className="tit">
+         Winner Project:&nbsp;&nbsp;
+         <p>{oneSWS?.sws?.winnerProjectTitle}</p>
+        </h2>
+        <p style={{ whiteSpace: "pre-line" }} className="par">
+         {" "}
+         {oneSWS?.sws?.winnerProjectDesc}
+        </p>
+       </div>
+      )}
+      {oneSWS?.sws?.Projects && (
+       <div>
+        <h2 className="tit">ALL PROJECTS</h2>
+        <p style={{ whiteSpace: "pre-line" }} className="Projects">
+         {oneSWS?.sws?.Projects}
+        </p>
+       </div>
+      )}
+
+      <img className="sponsored" src={image4} alt=" Hero Image"></img>
+     </div>
+    </div>
+   )}
+  </>
+ );
 }
 export default StartUpWeekend;

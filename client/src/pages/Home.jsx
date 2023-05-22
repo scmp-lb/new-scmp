@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Hero from "../assets/imagescmp.png";
+import Hero from "../assets/hero.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaLaptopCode } from "react-icons/fa";
@@ -27,7 +27,14 @@ function Home() {
     <img className="hero" src={Hero} alt="Hero Image"></img>
 
     <h1>
-     SCIENTIFIC CENTER FOR<br></br> MANUFACTURING AND PRODUCTION
+     <a
+      target="_blank"
+      href="https://drive.google.com/file/d/1rlkTZ_fFI4oT9ZGq-MLvsvNWQwGORClM/view?usp=sharing"
+     >
+      {" "}
+      برنامج الاحتفال
+     </a>
+     {/* SCIENTIFIC CENTER FOR<br></br> MANUFACTURING AND PRODUCTION */}
     </h1>
    </div>
 
