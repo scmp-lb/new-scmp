@@ -63,8 +63,8 @@ function Home() {
       }}
      >
       <span style={{ fontWeight: "900" }}>
-       SWS 2023-II دعوة لحضور المعرض الثالث لدعم الأفكار{" "}
-      </span>{" "}
+       <br /> دعوة لحضور المعرض الثالث لدعم الأفكار <br /> SWS 2023-II
+      </span>
       <br />
       برعاية غرفة التجارة والصناعة والزراعة في طرابلس وشمال لبنان
       <br />
@@ -84,10 +84,12 @@ function Home() {
        padding: "5rem 0 5rem 0",
        fontSize: "3rem",
        color: "#ff9900",
+       width: "100%",
+       textAlign: "center",
       }}
      >
       <a
-       style={{ color: "#ff9900", cursor: "pointer", width: "fit-content" }}
+       style={{ color: "#ff9900", cursor: "pointer", width: "100%" }}
        target="_blank"
        href="https://drive.google.com/file/d/1rlkTZ_fFI4oT9ZGq-MLvsvNWQwGORClM/view?usp=sharing"
       >
