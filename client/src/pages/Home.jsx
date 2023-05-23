@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Hero from "../assets/hero.png";
-import HeroImg from "../assets/home-img.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaLaptopCode } from "react-icons/fa";
@@ -11,12 +9,18 @@ import { IoIosCash } from "react-icons/io";
 import Image from "../assets/images/scmp.png";
 import { useLocation } from "react-router-dom";
 
+// LOGOS IMPORTS
+import scmpLogo from "../assets/scmp-logo.png";
+import luLogo from "../assets/lu-logo.png";
+import aufLogo from "../assets/auf-logo.png";
+import swsLogo from "../assets/sws-logo.png";
+import ccitLogo from "../assets/ccit-logo.png";
+
 function Home() {
  const { pathname } = useLocation();
 
  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
- console.log(innerWidth);
  useEffect(() => {
   window.scrollTo(0, 0);
  }, [pathname]);
@@ -39,21 +43,75 @@ function Home() {
 
  return (
   <div className="Home-page">
-   <div className="hero-section">
-    <img
-     className="hero"
-     src={innerWidth > 1200 ? Hero : HeroImg}
-     alt="Hero Image"
-    />
-    <h1>
-     <a
-      target="_blank"
-      href="https://drive.google.com/file/d/1rlkTZ_fFI4oT9ZGq-MLvsvNWQwGORClM/view?usp=sharing"
+   <div style={{ paddingTop: "10rem" }}>
+    <div
+     style={{
+      display: "flex",
+      flexDirection: "column",
+      alignContent: "center",
+      justifyContent: "center",
+      alignItems: "center",
+     }}
+    >
+     <h3
+      style={{
+       width: `${innerWidth > 1200 ? "50%" : "80%"}`,
+       textAlign: "center",
+       lineHeight: "5rem",
+       fontSize: `${innerWidth > 1200 ? "1.8rem" : "3.5rem"}`,
+       fontWeight: "300",
+      }}
      >
-      برنامج الاحتفال
-     </a>
-     {/* SCIENTIFIC CENTER FOR <br></br> MANUFACTURING AND PRODUCTION */}
-    </h1>
+      <span style={{ fontWeight: "900" }}>
+       SWS 2023-II دعوة لحضور المعرض الثالث لدعم الأفكار{" "}
+      </span>{" "}
+      <br />
+      برعاية غرفة التجارة والصناعة والزراعة في طرابلس وشمال لبنان
+      <br />
+      وبالتعاون مع الجامعة اللبنانية والوكالة الجامعية الفرنكوفونية
+      <br />
+      يتشرف المركز العلمي للتصنيع والإنتاج بدعوتكم لحضور
+      <br />
+      معرضه الثالث الذي سيعقد في غرفة التجارة والصناعة والزراعة في طرابلس
+      <br />
+      نهار السبت 27 ايار 2023 الساعة 10:00 صباحًا
+      <br />
+      <span style={{ fontWeight: "900" }}>حضوركم يشرفنا</span>
+     </h3>
+     <h3
+      style={{
+       display: "block",
+       padding: "5rem 0 5rem 0",
+       fontSize: "3rem",
+       color: "#ff9900",
+      }}
+     >
+      <a
+       style={{ color: "#ff9900", cursor: "pointer", width: "fit-content" }}
+       target="_blank"
+       href="https://drive.google.com/file/d/1rlkTZ_fFI4oT9ZGq-MLvsvNWQwGORClM/view?usp=sharing"
+      >
+       برنامج الاحتفال
+      </a>
+     </h3>
+     <div
+      style={{
+       display: "flex",
+       flexDirection: `${innerWidth > 1200 ? "row" : "column"}`,
+       alignItems: "center",
+       justifyContent: "space-between",
+       width: "100%",
+       padding: "0 10rem",
+       gap: `${innerWidth > 1200 ? "0" : "5rem"}`,
+      }}
+     >
+      <img width={"275px"} src={swsLogo} />
+      <img width={"200px"} src={scmpLogo} />
+      <img width={"225px"} src={ccitLogo} />
+      <img width={"200px"} src={luLogo} />
+      <img width={"475px"} src={aufLogo} />
+     </div>
+    </div>
    </div>
 
    <div className="upcoming-events">
