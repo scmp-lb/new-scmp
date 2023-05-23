@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../assets/hero.png";
+import HeroImg from "../assets/home-img.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaLaptopCode } from "react-icons/fa";
@@ -13,6 +14,9 @@ import { useLocation } from "react-router-dom";
 function Home() {
  const { pathname } = useLocation();
 
+ const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+ console.log(innerWidth);
  useEffect(() => {
   window.scrollTo(0, 0);
  }, [pathname]);
@@ -20,21 +24,35 @@ function Home() {
  useEffect(() => {
   AOS.init();
   AOS.refresh();
+
+  //HANDLE IMAGE RESPONSIVNESS
+  const handleWindowResize = () => {
+   setInnerWidth(window.innerWidth);
+  };
+
+  window.addEventListener("resize", handleWindowResize);
+
+  return () => {
+   window.removeEventListener("resize", handleWindowResize);
+  };
  }, []);
+
  return (
   <div className="Home-page">
    <div className="hero-section">
-    <img className="hero" src={Hero} alt="Hero Image"></img>
-
+    <img
+     className="hero"
+     src={innerWidth > 1200 ? Hero : HeroImg}
+     alt="Hero Image"
+    />
     <h1>
      <a
       target="_blank"
       href="https://drive.google.com/file/d/1rlkTZ_fFI4oT9ZGq-MLvsvNWQwGORClM/view?usp=sharing"
      >
-      {" "}
       برنامج الاحتفال
      </a>
-     {/* SCIENTIFIC CENTER FOR<br></br> MANUFACTURING AND PRODUCTION */}
+     {/* SCIENTIFIC CENTER FOR <br></br> MANUFACTURING AND PRODUCTION */}
     </h1>
    </div>
 
@@ -52,7 +70,7 @@ function Home() {
 
     <div className="About-us-cont">
      <div className="About-us-image">
-      <img src={Image}></img>
+      <img src={Image} />
      </div>
      <div className="About-us-text">
       <h3 style={{ marginBottom: 10 }}>
@@ -75,6 +93,7 @@ function Home() {
      </div>
     </div>
    </div>
+
    <div className="Offer-container">
     <div className="Offer">
      <h2 style={{ opacity: "0.9" }} data-aos="fade-up">
@@ -84,30 +103,26 @@ function Home() {
     <div className="card-container">
      <div className="card">
       <div className="icon">
-       {" "}
        <FaLaptopCode />
-      </div>{" "}
+      </div>
       <h3>Technology</h3>
      </div>
      <div className="card">
       <div className="icon">
-       {" "}
        <MdExplore />
-      </div>{" "}
+      </div>
       <h3>Research</h3>
      </div>
      <div className="card">
       <div className="icon">
-       {" "}
        <IoIosCash />
-      </div>{" "}
+      </div>
       <h3>Investment Funding</h3>
      </div>
      <div className="card">
       <div className="icon">
-       {" "}
        <AiOutlineBulb />
-      </div>{" "}
+      </div>
       <h3>Incubate Ideas</h3>
      </div>
     </div>

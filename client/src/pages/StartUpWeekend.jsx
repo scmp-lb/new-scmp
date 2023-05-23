@@ -42,7 +42,15 @@ function StartUpWeekend() {
  return (
   <>
    {isLoading ? (
-    <div>
+    <div
+     style={{
+      display: "flex",
+      justifyContent: "center",
+      alignContent: "center",
+      alignItems: "center",
+      height: "100vh",
+     }}
+    >
      <Loader />
     </div>
    ) : (

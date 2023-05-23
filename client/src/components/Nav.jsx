@@ -40,7 +40,14 @@ function Nav({ style }) {
      <div className="dropdown">
       {sws?.length > 0
        ? sws.map((ele, index) => {
-          return <NavDropDown value={ele} key={index} />;
+          return (
+           <NavDropDown
+            value={ele}
+            key={index}
+            closeMenu={() => {}}
+            setIsOpen={() => {}}
+           />
+          );
          })
        : ""}
      </div>
