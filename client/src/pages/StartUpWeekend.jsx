@@ -105,16 +105,29 @@ function StartUpWeekend() {
         </p>
        </div>
       )}
-      {oneSWS?.sws?.Projects && (
+      {oneSWS?.sws?.SemiFinalProjects && (
        <div>
-        <h2 className="tit">ALL PROJECTS</h2>
+        <h2 className="tit">SEMI-FINAL PROJECTS</h2>
         <p style={{ whiteSpace: "pre-line" }} className="Projects">
-         {oneSWS?.sws?.Projects}
+         {oneSWS?.sws?.SemiFinalProjects}
         </p>
        </div>
       )}
-
-      <img className="sponsored" src={image4} alt=" Hero Image"></img>
+      {oneSWS?.sws?.FinalProjects && (
+       <div>
+        <h2 className="tit">FINAL PROJECTS</h2>
+        <p style={{ whiteSpace: "pre-line" }} className="Projects">
+         {oneSWS?.sws?.FinalProjects}
+        </p>
+       </div>
+      )}
+      {oneSWS?.sws?.sponserImage && (
+       <img
+        className="sponsored"
+        src={oneSWS?.sws?.sponserImage?.url}
+        alt=" Hero Image"
+       ></img>
+      )}
      </div>
     </div>
    )}

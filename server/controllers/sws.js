@@ -155,7 +155,7 @@ export const editSWSEvent = catchAsync(async (req, res, next) => {
   Description: req.body.Description,
   sponserImage: sponseredImage,
   link: req.body.link,
-  images: imagesLinks,
+  images: req.body.images,
   winnerProjectTitle: req.body.winnerProjectTitle,
   winnerProjectDesc: req.body.winnerProjectDesc,
   linkDesc: req.body.linkDesc,
