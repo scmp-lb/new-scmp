@@ -91,7 +91,7 @@ function Home() {
       <a
        style={{ color: "#ff9900", cursor: "pointer", width: "100%" }}
        target="_blank"
-       href="https://drive.google.com/file/d/1rlkTZ_fFI4oT9ZGq-MLvsvNWQwGORClM/view?usp=sharing"
+       href="https://drive.google.com/file/d/1k4hQNvH5ZJcGIICZRtufAj2xcRZw_rxX/view?usp=share_link"
       >
        برنامج الاحتفال
       </a>
