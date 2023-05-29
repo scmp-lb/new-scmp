@@ -6,7 +6,7 @@ import { AiOutlineBulb } from "react-icons/ai";
 import UPCOMING from "../components/upcomingEvents";
 import { MdExplore } from "react-icons/md";
 import { IoIosCash } from "react-icons/io";
-import Image from "../assets/images/scmp.png";
+import Image from "../assets/images/hero.JPG";
 import { useLocation } from "react-router-dom";
 
 // LOGOS IMPORTS
@@ -43,79 +43,25 @@ function Home() {
 
  return (
   <div className="Home-page">
-   <div style={{ paddingTop: "10rem" }}>
-    <div
-     style={{
-      display: "flex",
-      flexDirection: "column",
-      alignContent: "center",
-      justifyContent: "center",
-      alignItems: "center",
-     }}
-    >
-     <h3
-      style={{
-       width: `${innerWidth > 1200 ? "50%" : "80%"}`,
-       textAlign: "center",
-       lineHeight: "5rem",
-       fontSize: `${innerWidth > 1200 ? "1.8rem" : "3.5rem"}`,
-       fontWeight: "300",
-      }}
-     >
-      <span style={{ fontWeight: "900" }}>
-       <br /> دعوة لحضور المعرض الثالث لدعم الأفكار <br /> SWS 2023-II
-      </span>
-      <br />
-      برعاية غرفة التجارة والصناعة والزراعة في طرابلس وشمال لبنان
-      <br />
-      وبالتعاون مع الجامعة اللبنانية والوكالة الجامعية الفرنكوفونية
-      <br />
-      يتشرف المركز العلمي للتصنيع والإنتاج بدعوتكم لحضور
-      <br />
-      معرضه الثالث الذي سيعقد في غرفة التجارة والصناعة والزراعة في طرابلس
-      <br />
-      نهار السبت 27 ايار 2023 الساعة 10:00 صباحًا
-      <br />
-      <span style={{ fontWeight: "900" }}>حضوركم يشرفنا</span>
-     </h3>
-     <h3
-      style={{
-       display: "block",
-       padding: "5rem 0 5rem 0",
-       fontSize: "3rem",
-       color: "#ff9900",
-       width: "100%",
-       textAlign: "center",
-      }}
-     >
-      <a
-       style={{ color: "#ff9900", cursor: "pointer", width: "100%" }}
-       target="_blank"
-       href="https://drive.google.com/file/d/1k4hQNvH5ZJcGIICZRtufAj2xcRZw_rxX/view?usp=share_link"
-      >
-       برنامج الاحتفال
-      </a>
-     </h3>
-     <div
-      style={{
-       display: "flex",
-       flexDirection: `${innerWidth > 1200 ? "row" : "column"}`,
-       alignItems: "center",
-       justifyContent: "space-between",
-       width: "100%",
-       padding: "0 10rem",
-       gap: `${innerWidth > 1200 ? "0" : "5rem"}`,
-      }}
-     >
-      <img width={"275px"} src={swsLogo} />
-      <img width={"200px"} src={scmpLogo} />
-      <img width={"225px"} src={ccitLogo} />
-      <img width={"200px"} src={luLogo} />
-      <img width={"475px"} src={aufLogo} />
+   <div className="hero-image">
+    <img src={Image} alt="hero image"></img>{" "}
+    <div>
+     {" "}
+     <div>
+      {" "}
+      <h1 style={{ marginTop: "10rem" }}>
+       LAST EVENT START-UP WEEKEND 2023-II TRIPOLI -
+       <a
+        style={{ fontSize: "45px", width: "10rem" }}
+        href="http://StartUpWeekend/647480abb4fa533d32d76751"
+       >
+        {" "}
+        LINK
+       </a>
+      </h1>
      </div>
     </div>
    </div>
-
    <div className="upcoming-events">
     <h2 style={{ opacity: "0.9" }} data-aos="fade-up">
      RECENT <span>EVENTS</span>
