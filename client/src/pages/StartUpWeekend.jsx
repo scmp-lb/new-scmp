@@ -107,7 +107,7 @@ function StartUpWeekend() {
       )}
       {oneSWS?.sws?.SemiFinalProjects && (
        <div>
-        <h2 className="tit">SEMI-FINAL PROJECTS</h2>
+        <h2 className="tit">PRESENTED IDEAS</h2>
         <p style={{ whiteSpace: "pre-line" }} className="Projects">
          {oneSWS?.sws?.SemiFinalProjects}
         </p>
@@ -126,6 +126,8 @@ function StartUpWeekend() {
         className="sponsored"
         src={oneSWS?.sws?.sponserImage?.url}
         alt=" Hero Image"
+        height={250}
+        width={800}
        ></img>
       )}
      </div>

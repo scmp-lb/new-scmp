@@ -268,7 +268,7 @@ function OneEvent({ value, src, className }) {
        />
       </div>
      ))}
-    </Slider>     */}
+    </Slider> */}
     <div className="overlay">
      <img
       style={{

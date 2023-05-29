@@ -17,7 +17,11 @@ function SWSCard({ value }) {
  const [linkDesc, setLinkDesc] = useState(value.linkDesc);
  const [subTitle, setSubTitle] = useState(value.subTitle);
  const [images, setImages] = useState([]);
- const [projects, setProjects] = useState(value.Projects);
+ const [FinalProjects, setFinalProjects] = useState(value.FinalProjects);
+ const [SemiFinalProjects, setSemiFinalProjects] = useState(
+  value.SemiFinalProjects
+ );
+ const [sponserImage, setsponserImage] = useState(value?.sponserImage?.url);
  const [description, setDescription] = useState(value.Description);
  const [showDelete, setShowDelete] = useState(false);
  const [showEdit, setShowEdit] = useState(false);
@@ -49,11 +53,13 @@ function SWSCard({ value }) {
   formData.set("Description", description);
   formData.set("title", title);
   formData.set("subTitle", subTitle);
-  formData.set("Projects", projects);
+  formData.set("FinalProjects", FinalProjects);
+  formData.set("SemiFinalProjects", SemiFinalProjects);
   formData.set("linkDesc", linkDesc);
   formData.set("link", link);
   formData.set("winnerProjectTitle", winnerProjectTitle);
   formData.set("winnerProjectDesc", winnerProjectDesc);
+  formData.set("sponserImage", sponserImage);
 
   images.forEach((image) => {
    formData.append("images", image);
@@ -174,42 +180,80 @@ function SWSCard({ value }) {
         />
        </div>
       )}
-      {value.Projects && (
+
+      {value.SemiFinalProjects && (
        <div className="Input">
-        <p>Projects</p>{" "}
+        <p>Semi-Final Projects</p>{" "}
         <textarea
          type="text"
-         placeholder="Projects"
+         placeholder="Semi Final Projects"
          name="Projects"
-         defaultValue={value.Projects}
+         defaultValue={value.SemiFinalProjects}
          onChange={(event) => {
-          setProjects(event.target.value);
+          setSemiFinalProjects(event.target.value);
+         }}
+        />
+       </div>
+      )}
+      {value.FinalProjects && (
+       <div className="Input">
+        <p>Final Projects</p>{" "}
+        <textarea
+         type="text"
+         placeholder="Final Projects"
+         name="Projects"
+         defaultValue={value.FinalProjects}
+         onChange={(event) => {
+          setFinalProjects(event.target.value);
+         }}
+        />
+       </div>
+      )}
+      <div className="Input">
+       <p>Sponser Image:</p>
+       <input
+        type="file"
+        id="image"
+        accept="image/png image/jpeg image/jpg image/webp"
+        onChange={(e) => {
+         const reader = new FileReader();
+         reader.onload = () => {
+          if (reader.readyState === 2) {
+           setsponserImage(reader.result);
+          }
+         };
+
+         reader.onerror = (err) => console.log(err);
+         reader.readAsDataURL(e.target.files[0]);
+        }}
+       />
+      </div>
+
+      {value.sponserImage && (
+       <div className="Input">
+        <p>Images:</p>
+        <input
+         type="file"
+         id="image"
+         multiple
+         accept="image/png image/jpeg image/jpg image/webp"
+         onChange={(e) => {
+          const files = Array.from(e.target.files);
+          setImages([]);
+          files.forEach((file) => {
+           const reader = new FileReader();
+           reader.onload = () => {
+            if (reader.readyState === 2) {
+             setImages((oldArray) => [...oldArray, reader.result]);
+            }
+           };
+           reader.readAsDataURL(file);
+          });
          }}
         />
        </div>
       )}
 
-      <div className="Input">
-       <input
-        type="file"
-        id="image"
-        multiple
-        accept="image/png image/jpeg image/jpg image/webp"
-        onChange={(e) => {
-         const files = Array.from(e.target.files);
-         setImages([]);
-         files.forEach((file) => {
-          const reader = new FileReader();
-          reader.onload = () => {
-           if (reader.readyState === 2) {
-            setImages((oldArray) => [...oldArray, reader.result]);
-           }
-          };
-          reader.readAsDataURL(file);
-         });
-        }}
-       />
-      </div>
       <div className="crud-buttons">
        <button type="submit"> Edit</button>
        <button onClick={() => setShowEdit(false)}>Cancel</button>
@@ -217,6 +261,7 @@ function SWSCard({ value }) {
      </form>
     </div>
    )}
+
    <div data-aos="fade-up" className="event-card">
     <Slider className="singleImageDash" {...settings}>
      {value?.images?.map((image) => (
@@ -229,7 +274,6 @@ function SWSCard({ value }) {
      <div className="delete-popup">
       <form className="form">
        <h3>Are you sure you want to delete !</h3>
-
        <div>
         <div className="crud-buttons">
          <button onClick={handleDelete}>Delete</button>

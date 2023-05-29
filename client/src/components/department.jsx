@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
  deleteDepartment,
- getDepartments,
  editDepartment,
 } from "../features/departments/departmentSlice";
 function Department({ value, src }) {
@@ -76,6 +75,7 @@ function Department({ value, src }) {
         onChange={(event) => setSubTitle(event.target.value)}
        />
       </div>
+
       <div className="Input">
        <input
         type="text"
@@ -128,14 +128,7 @@ function Department({ value, src }) {
    <img src={src} alt="image" />
    <h2>{value.title}</h2>
    <p>{value.subTitle}</p>
-   <p
-    className="description"
-    style={{
-     display: `${currentLocation === "/Departments" ? "none" : "block"}`,
-    }}
-   >
-    {value.description}
-   </p>
+
    <div className="crud-buttons">
     <button
      className="read-more"

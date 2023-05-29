@@ -173,7 +173,7 @@ function SWSDash() {
          onChange={(event) => {
           setFinalProjects(event.target.value);
          }}
-         placeholder="Semi final SWS Projects"
+         placeholder="final SWS Projects"
         ></textarea>
        </div>
        <div className="Input">

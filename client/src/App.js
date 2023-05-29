@@ -17,68 +17,68 @@ import NavBar from "./components/NavBar";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const currentLocation = window.location.pathname;
-  const isAdminRoute =
-    currentLocation === "/DepartmentDash" ||
-    currentLocation === "/EventsDash" ||
-    currentLocation === "/SWSDash" ||
-    currentLocation === "/login";
+ const currentLocation = window.location.pathname;
+ const isAdminRoute =
+  currentLocation === "/DepartmentDash" ||
+  currentLocation === "/EventsDash" ||
+  currentLocation === "/SWSDash" ||
+  currentLocation === "/login";
 
-  return (
-    <Router>
-      <div className="App">
-        {!isAdminRoute && (
-          <>
-            <div className="nav-desktop">
-              <Nav />
-            </div>
-
-            <div className="nav-mobile">
-              <NavBar />
-            </div>
-          </>
-        )}
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Departments" element={<Departments />} />
-          <Route path="/Events" element={<Events />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/OneDepartment/:id" element={<OneDepartment />} />
-          <Route path="/OneEvent/:id" element={<OneEvent />} />
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/StartUpWeekend/:id" element={<StartUpWeekend />} />{" "}
-          <Route
-            path="/EventsDash"
-            element={
-              <ProtectedRoute>
-                <EventDash />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/SWSDash"
-            element={
-              <ProtectedRoute>
-                <SWSDash />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/DepartmentDash"
-            element={
-              <ProtectedRoute>
-                <DepartmentDash />
-              </ProtectedRoute>
-            }
-          />
-          {/* unregistred route => auto-return to latest registred route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        {!isAdminRoute && <Footer />}
+ return (
+  <Router>
+   <div className="App">
+    {!isAdminRoute && (
+     <>
+      <div className="nav-desktop">
+       <Nav />
       </div>
-    </Router>
-  );
+
+      <div className="nav-mobile">
+       <NavBar />
+      </div>
+     </>
+    )}
+
+    <Routes>
+     <Route path="/" element={<Home />} />
+     <Route path="/Departments" element={<Departments />} />
+     <Route path="/Events" element={<Events />} />
+     <Route path="/ContactUs" element={<ContactUs />} />
+     <Route path="/OneDepartment/:id" element={<OneDepartment />} />
+     <Route path="/OneEvent/:id" element={<OneEvent />} />
+     <Route path="/login" element={<Login />}></Route>
+     <Route path="/StartUpWeekend/:id" element={<StartUpWeekend />} />{" "}
+     <Route
+      path="/EventsDash"
+      element={
+       <ProtectedRoute>
+        <EventDash />
+       </ProtectedRoute>
+      }
+     />
+     <Route
+      path="/SWSDash"
+      element={
+       <ProtectedRoute>
+        <SWSDash />
+       </ProtectedRoute>
+      }
+     />
+     <Route
+      path="/DepartmentDash"
+      element={
+       <ProtectedRoute>
+        <DepartmentDash />
+       </ProtectedRoute>
+      }
+     />
+     {/* unregistred route => auto-return to latest registred route */}
+     <Route path="*" element={<NotFound />} />
+    </Routes>
+    {!isAdminRoute && <Footer />}
+   </div>
+  </Router>
+ );
 }
 
 export default App;

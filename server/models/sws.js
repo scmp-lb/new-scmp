@@ -9,7 +9,7 @@ const swsSchema = Schema({
 
  subTitle: {
   type: String,
-  required: [true, "Please enter the event subtitle."],
+  required: false,
  },
  Description: {
   type: String,
@@ -56,11 +56,11 @@ const swsSchema = Schema({
  },
  SemiFinalProjects: {
   type: String,
-  required: [false, "Please provide all projects"],
+  required: false,
  },
  FinalProjects: {
   type: String,
-  required: [false, "Please provide all projects"],
+  required: false,
  },
 });
 
