@@ -3,18 +3,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaLaptopCode } from "react-icons/fa";
 import { AiOutlineBulb } from "react-icons/ai";
-import UPCOMING from "../components/upcomingEvents";
 import { MdExplore } from "react-icons/md";
 import { IoIosCash } from "react-icons/io";
-import Image from "../assets/images/hero.JPG";
 import { useLocation } from "react-router-dom";
+import UPCOMING from "../components/upcomingEvents";
+
+//IMAGES IMPORTS
+import Image from "../assets/images/hero.JPG";
 import scmpImage from "../assets/images/scmp.png";
-// LOGOS IMPORTS
-import scmpLogo from "../assets/scmp-logo.png";
-import luLogo from "../assets/lu-logo.png";
-import aufLogo from "../assets/auf-logo.png";
-import swsLogo from "../assets/sws-logo.png";
-import ccitLogo from "../assets/ccit-logo.png";
 
 function Home() {
  const { pathname } = useLocation();
