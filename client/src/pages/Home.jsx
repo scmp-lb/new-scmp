@@ -53,7 +53,7 @@ function Home() {
        LAST EVENT START-UP WEEKEND 2023-II TRIPOLI -
        <a
         style={{ fontSize: "45px", width: "10rem" }}
-        href="http://scmp-lb.com/647480abb4fa533d32d76751"
+        href="/StartUpWeekend/647497bf15d29384cdccc643"
        >
         {" "}
         LINK
