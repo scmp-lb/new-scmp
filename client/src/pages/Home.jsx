@@ -8,7 +8,7 @@ import { MdExplore } from "react-icons/md";
 import { IoIosCash } from "react-icons/io";
 import Image from "../assets/images/hero.JPG";
 import { useLocation } from "react-router-dom";
-
+import scmpImage from "../assets/images/scmp.png";
 // LOGOS IMPORTS
 import scmpLogo from "../assets/scmp-logo.png";
 import luLogo from "../assets/lu-logo.png";
@@ -76,7 +76,7 @@ function Home() {
 
     <div className="About-us-cont">
      <div className="About-us-image">
-      <img src={Image} />
+      <img src={scmpImage} />
      </div>
      <div className="About-us-text">
       <h3 style={{ marginBottom: 10 }}>
