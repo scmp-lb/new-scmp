@@ -53,6 +53,14 @@
 }
 @media only screen and (max-width: 1024px) {
  .start-Up {
+  .slider img {
+   width: 800px;
+   height: 600px;
+   padding-top: 5rem;
+   padding-bottom: 2rem;
+   margin: auto;
+   object-fit: cover;
+  }
   h1 {
    display: none;
   }
