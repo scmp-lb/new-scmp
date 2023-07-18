@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 import UPCOMING from "../components/upcomingEvents";
 
 //IMAGES IMPORTS
-import Image from "../assets/images/hero.JPG";
+import Image from "../assets/images/CoverPage.gif";
 import scmpImage from "../assets/images/scmp.png";
 
 function Home() {
@@ -46,13 +46,11 @@ function Home() {
      <div>
       {" "}
       <h1 style={{ marginTop: "10rem" }}>
-       LAST EVENT START-UP WEEKEND 2023-II TRIPOLI -
        <a
-        style={{ fontSize: "45px", width: "10rem" }}
-        href="/StartUpWeekend/647497bf15d29384cdccc643"
+        style={{ fontSize: "30px", position: "relative" }}
+        href="https://forms.gle/9SQMzvAYoW1SdjrS7"
        >
-        {" "}
-        LINK
+        APPLY NOW
        </a>
       </h1>
      </div>
