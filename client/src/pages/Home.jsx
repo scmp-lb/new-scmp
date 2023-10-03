@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 import UPCOMING from "../components/upcomingEvents";
 
 //IMAGES IMPORTS
-import Image from "../assets/images/NewCover.gif";
+import Image from "../assets/images/WEBSITE1.gif";
 import scmpImage from "../assets/images/scmp.png";
 
 function Home() {
@@ -40,29 +40,23 @@ function Home() {
  return (
   <div className="Home-page">
    <div className="hero-image">
-    <img src={Image} alt="hero image"></img>{" "}
+   <a
+        style={{ fontSize: "30px", position: "relative" }}
+        href="https://forms.gle/t5sZQ6hQ72gF71rVA"
+       >
+            <img src={Image} alt="hero image"></img>{" "}
+       </a>
+
     <div>
      {" "}
      <div>
       {" "}
       <h1 style={{ marginTop: "10rem" }}>
-       <a
-        style={{ fontSize: "30px", position: "relative" }}
-        href="https://forms.gle/9SQMzvAYoW1SdjrS7"
-       >
-        APPLY NOW
-       </a>
       </h1>
      </div>
     </div>
    </div>
-   <div className="upcoming-events">
-    <h2 style={{ opacity: "0.9" }} data-aos="fade-up">
-     RECENT <span>EVENTS</span>
-    </h2>
 
-    <UPCOMING />
-   </div>
    <div className="about-us">
     <h2 style={{ opacity: "0.9" }} data-aos="fade-up">
      ABOUT <span>US</span>
