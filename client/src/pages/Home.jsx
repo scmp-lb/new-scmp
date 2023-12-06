@@ -42,7 +42,7 @@ function Home() {
    <div className="hero-image">
    <a
         style={{ fontSize: "30px", position: "relative" }}
-        href="https://forms.gle/t5sZQ6hQ72gF71rVA"
+        href="https://forms.gle/sJdqBiJybLrZiujj8"
        >
             <img src={Image} alt="hero image"></img>{" "}
        </a>
