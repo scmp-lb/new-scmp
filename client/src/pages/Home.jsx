@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 import UPCOMING from "../components/upcomingEvents";
 
 //IMAGES IMPORTS
-import Image from "../assets/images/Postponed event.gif";
+import Image from "../assets/images/SWS 2024-I/Home.png";
 import scmpImage from "../assets/images/scmp.png";
 
 function Home() {
